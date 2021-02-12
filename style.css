@@ -80,6 +80,7 @@ button{
   transition: all .2s ease;
   cursor: pointer;
   padding: .5em;
+  width: 120px;
 }
 button:focus{
   outline: none;
@@ -168,10 +169,15 @@ button.btn-special:hover{
 .btn-cancel{
   background-color: red;
   border-color: lightcoral;
+  width: 120px;
 }
 .btn-cancel:hover{
   background-color: #fa4141;
   border-color: #ff3737;
+}
+
+.btn-small{
+  width: 65px;
 }
 
 .text-danger{

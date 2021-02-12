@@ -1,3 +1,10 @@
+/** THINGS I'D LIKE TO ADD:
+ *      Lock out or hide "Add Name" until after Play Game is clicked.
+ *      "Back to Intro" button.
+ * 
+ */
+
+
 /**
  * Stores the list of kittens
  * @type {Kitten[]}
@@ -12,25 +19,71 @@ let kittens = [];
  * then add that data to the kittens list.
  * Then reset the form
  */
-function addKitten(event) {}
+function addKitten(event) {
+  event.preventDefault()
+  let form = event.target
+  let kitten = {
+    id: generateId(),
+    name: form.name.value
+  }
+  let existingKitten = kittens.find(kitten => kitten.name == form.name.value)
+  if (!existingKitten) {
+    kittens.push(kitten)
+  }
+  saveKittens()
+  loadKittens()
+  drawKittens()
+  form.reset()
+}
 
 /**
  * Converts the kittens array to a JSON string then
  * Saves the string to localstorage at the key kittens
  */
-function saveKittens() {}
+function saveKittens() {
+window.localStorage.setItem("kittens", JSON.stringify(kittens))
+}
 
 /**
  * Attempts to retrieve the kittens string from localstorage
  * then parses the JSON string into an array. Finally sets
  * the kittens array to the retrieved array
  */
-function loadKittens() {}
+function loadKittens() {
+  let kittensData = JSON.parse(window.localStorage.getItem("kittens"))
+  if(kittensData){
+    kittens = kittensData
+  }
+}
 
 /**
  * Draw all of the kittens to the kittens element
  */
-function drawKittens() {}
+function drawKittens() {
+  console.log(kittens)
+  let template = ""
+  kittens.forEach(kitten => {
+    template += `
+    <div class="card bg-dark m-2">
+      <img src="https://robohash.org/${kitten.name}?set=set4" height="150px" class="m-1" alt="Moody Kittens"></img>
+      <span>
+        <p class="text-light">Name: ${kitten.name}</p>
+      </span>
+      <span>
+        <p class="text-light">Mood:</p>
+      </span>
+      <span>
+        <p class="text-light">Affection:</p>
+      </span>
+      <span class="d-flex space-between">
+        <button class="btn-cancel btn-small">Pet</button>
+        <button class="btn-small">CatNip</button>
+      </span>
+    </div>
+  `
+  })
+document.getElementById("kittens").innerHTML = template
+}
 
 /**
  * Find the kitten in the array by its id
@@ -70,7 +123,16 @@ function setKittenMood(kitten) {}
 
 function getStarted() {
   document.getElementById("welcome").remove();
-  drawKittens();
+  document.getElementById("kittens").classList.remove("hidden");
+  if (kittens) {
+    loadKittens()
+    drawKittens()
+  }
+}
+
+function resetKittens() {
+  kittens = []
+  saveKittens()
 }
 
 /**
