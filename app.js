@@ -24,7 +24,9 @@ function addKitten(event) {
   let form = event.target
   let kitten = {
     id: generateId(),
-    name: form.name.value
+    name: form.name.value,
+    mood: "Happy",
+    affection: 10
   }
   let existingKitten = kittens.find(kitten => kitten.name == form.name.value)
   if (!existingKitten) {
@@ -60,9 +62,10 @@ function loadKittens() {
  * Draw all of the kittens to the kittens element
  */
 function drawKittens() {
-  console.log(kittens)
   let template = ""
   kittens.forEach(kitten => {
+    let id = kitten.id
+    console.log(id)
     template += `
     <div class="card bg-dark m-2">
       <img src="https://robohash.org/${kitten.name}?set=set4" height="150px" class="m-1" alt="Moody Kittens"></img>
@@ -70,13 +73,16 @@ function drawKittens() {
         <p class="text-light">Name: ${kitten.name}</p>
       </span>
       <span>
-        <p class="text-light">Mood:</p>
+        <p class="text-light">Mood: ${kitten.mood}</p>
       </span>
       <span>
-        <p class="text-light">Affection:</p>
+        <p class="text-light">Affection: ${kitten.affection}</p>
+      </span>
+      <span>
+        <p class="text-light"> Id: ${kitten.id}</p>
       </span>
       <span class="d-flex space-between">
-        <button class="btn-cancel btn-small">Pet</button>
+        <button onclick="pet(${kitten.id})" class="btn-cancel btn-small">Pet</button>
         <button class="btn-small">CatNip</button>
       </span>
     </div>
@@ -103,7 +109,10 @@ function findKittenById(id) {
  * save the kittens
  * @param {string} id
  */
-function pet(id) {}
+function pet(id) {
+  console.log("Petting the kitten")
+  console.log(id)
+}
 
 /**
  * Find the kitten in the array of kittens
