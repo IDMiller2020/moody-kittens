@@ -64,11 +64,11 @@ function loadKittens() {
 function drawKittens() {
   let template = ""
   kittens.forEach(kitten => {
-    let id = kitten.id
-    console.log(id)
     template += `
     <div class="card bg-dark m-2">
-      <img src="https://robohash.org/${kitten.name}?set=set4" height="150px" class="m-1" alt="Moody Kittens"></img>
+      <div id="glow" class="kitten ${kitten.mood.toLowerCase()}">
+        <img src="https://robohash.org/${kitten.name}?set=set4" height="150px" alt="Moody Kittens"></img>
+      </div>
       <span>
         <p class="text-light">Name: ${kitten.name}</p>
       </span>
@@ -78,12 +78,9 @@ function drawKittens() {
       <span>
         <p class="text-light">Affection: ${kitten.affection}</p>
       </span>
-      <span>
-        <p class="text-light"> Id: ${kitten.id}</p>
-      </span>
       <span class="d-flex space-between">
-        <button onclick="pet(${kitten.id})" class="btn-cancel btn-small">Pet</button>
-        <button class="btn-small">CatNip</button>
+        <button onclick="pet('${kitten.id}')" class="btn-cancel btn-small">Pet</button>
+        <button onclick="catnip('${kitten.id}')" class="btn-small">CatNip</button>
       </span>
     </div>
   `
@@ -110,8 +107,22 @@ function findKittenById(id) {
  * @param {string} id
  */
 function pet(id) {
-  console.log("Petting the kitten")
-  console.log(id)
+  let kitten = findKittenById(id)
+  if (kitten.affection > 0) {
+    let i = Math.random()
+    if (i > 0.7){
+      if (kitten.affection < 10){
+        kitten.affection ++
+      }
+    }  else {
+        if (kitten.affection > 0){
+          kitten.affection --
+        }
+    }
+    setKittenMood(kitten)
+    saveKittens()
+    drawKittens()
+  }
 }
 
 /**
@@ -121,14 +132,48 @@ function pet(id) {
  * save the kittens
  * @param {string} id
  */
-function catnip(id) {}
+function catnip(id) {
+  let kitten = findKittenById(id)
+  if (kitten.affection > 0) {
+    if (kitten.affection < 5) {
+      kitten.mood = "Tolerant"
+      kitten.affection = 5
+      setKittenMood(kitten)
+      saveKittens()
+      drawKittens()
+    }
+  }
+}
 
 /**
  * Sets the kittens mood based on its affection
  * Happy > 6, Tolerant <= 5, Angry <= 3, Gone <= 0
  * @param {Kitten} kitten
  */
-function setKittenMood(kitten) {}
+function setKittenMood(kitten) {
+  console.log(kitten.mood)
+  console.log(kitten.affection)
+  if (kitten.affection == 0) {
+    console.log("Gone")
+    kitten.mood = "Gone";
+
+  }
+    else if (kitten.affection <= 3) {
+      console.log("Angry")
+      kitten.mood = "Angry";
+      
+    }
+    else if (kitten.affection <= 5) {
+      console.log("Tolerant")
+      kitten.mood = "Tolerant";
+      
+    }
+    else {
+      console.log("Happy")
+      kitten.mood = "Happy";
+      
+    }
+}
 
 function getStarted() {
   document.getElementById("welcome").remove();
