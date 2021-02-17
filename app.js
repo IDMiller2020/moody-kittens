@@ -387,6 +387,7 @@ function getStarted() {
 }
 
 function backToIntro() {
+  document.getElementById("resetButton").classList.remove("hidden")
   location.reload()
 }
 
