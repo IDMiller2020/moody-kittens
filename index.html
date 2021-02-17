@@ -14,7 +14,7 @@
 <body>
   <header class="bg-dark d-flex p-1 space-between">
     <img src="moody-logo.png" height="60" alt="Moody Kittens">
-    <form class="" onsubmit="addKitten(event)">
+    <form id="addKitten" class="hidden" onsubmit="addKitten(event)">
       <div class="d-flex">
         <input placeholder="Name" type="text" name="name" required/>
         <button class="btn-special" type="submit">
@@ -41,12 +41,12 @@
     <div class="p-2">
       <div id="kittens" class="d-flex flex-wrap hidden">
         
-
       </div>
     </div>
   </main>
-  <footer class="card bg-dark text-light p-2 d-flex justify-content-center">
-    <small>Created with <span style="color: var(--primary)">&hearts;</span> by CodeWorks</small>
+  <footer id="footer" class="card bg-dark text-light p-2 d-flex space-around">
+      <button id="returnButton" class="return hidden" onclick="backToIntro()">Back to Intro</button>
+      <small>Created with <span style="color: var(--primary)">&hearts;</span> by CodeWorks</small>
   </footer>
 
   <script src="app.js"></script>

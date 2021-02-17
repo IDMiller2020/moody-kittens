@@ -200,10 +200,16 @@ function setKittenMood(kitten) {
 function getStarted() {
   document.getElementById("welcome").remove();
   document.getElementById("kittens").classList.remove("hidden");
+  document.getElementById("addKitten").classList.remove("hidden");
+  document.getElementById("returnButton").classList.remove("hidden");
   if (kittens) {
     loadKittens()
     drawKittens()
   }
+}
+
+function backToIntro() {
+  location.reload()
 }
 
 function resetKittens() {
