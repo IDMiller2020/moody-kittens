@@ -150,11 +150,19 @@ button.btn-special:hover{
   pointer-events: none;
 }
 
+.kitten.gone.bold{
+  font-weight: bold;
+}
+
 .bg-dark{
   background-color: var(--dark);
 }
 .text-light{
   color: var(--light)
+}
+
+.text-light.bold{
+  font-weight: bold;
 }
 
 .btn-dark{

@@ -25,8 +25,8 @@ function addKitten(event) {
   let kitten = {
     id: generateId(),
     name: form.name.value,
-    mood: "Happy",
-    affection: 10
+    mood: "Tolerant",
+    affection: 5
   }
   let existingKitten = kittens.find(kitten => kitten.name == form.name.value)
   if (!existingKitten) {
@@ -72,14 +72,17 @@ function drawKittens() {
         <div id="glow" class="kitten ${kitten.mood.toLowerCase()}">
           <img src="https://robohash.org/${kitten.name}?set=set4" height="150px" alt="Moody Kittens"></img>
         </div>
-        <span>
-          <p class="text-light">Name: ${kitten.name}</p>
+        <span class="d-flex">
+          <p class="text-light bold">Name: &nbsp</p>
+          <p class="text-light">${kitten.name}</p>
         </span>
-        <span>
-          <p class="text-light">Mood: ${kitten.mood}</p>
+        <span class="d-flex">
+          <p class="text-light bold">Mood: &nbsp</p>
+          <p class="text-light">${kitten.mood}</p>
         </span>
-        <span>
-          <p class="text-light">Affection: ${kitten.affection}</p>
+        <span class="d-flex">
+          <p class="text-light bold">Affection: &nbsp</p>
+          <p class="text-light">${kitten.affection}</p>
         </span>
         <span class="d-flex space-between">
           <button onclick="pet('${kitten.id}')" class="btn-cancel btn-small">Pet</button>
@@ -93,11 +96,12 @@ function drawKittens() {
         <div id="glow" class="kitten gone">
           <img src="https://robohash.org/${kitten.name}?set=set4" height="150px" alt="Moody Kittens"></img>
         </div>
-        <span>
-          <p class="kitten gone">Name: ${kitten.name}</p>
+        <span class="d-flex">
+          <p class="kitten gone bold">Name: &nbsp</p>
+          <p class="kitten gone">${kitten.name}</p>
         </span>
         <span>
-          <p class="kitten gone">Gone, Ran Away!</p>
+          <p class="kitten gone bold">Gone, Ran Away!</p>
         </span>
       </div>
       `
