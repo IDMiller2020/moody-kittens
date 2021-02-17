@@ -88,6 +88,9 @@ function drawKittens() {
           <button onclick="pet('${kitten.id}')" class="btn-cancel btn-small">Pet</button>
           <button onclick="catnip('${kitten.id}')" class="btn-small">CatNip</button>
         </span>
+        <span class="d-flex justify-content-center mt-1">
+          <button class="joke-button" onclick="catJoke('${kitten.id}')">Cat Joke</button>
+        </span>
       </div>
     `
     }  else {
@@ -167,33 +170,177 @@ function catnip(id) {
   }
 }
 
+function catJoke(id) {
+  let kitten = findKittenById(id)
+  let name = kitten.name
+  let alertMessage = ""
+  let like = Math.random()
+  let joke = Math.round(Math.random() * 15)
+  let jokeText = ""
+  console.log(joke)
+  if (joke == 15) {
+    jokeText = "What do cats like to eat on a hot day?\nA MICE-cream cone!\n\n"
+    if (like > 0.5){
+      kitten.affection += 3
+      alertMessage = jokeText +name + "thought that was a good cat joke!"
+    } else {
+      kitten.affection -= 3
+      alertMessage = jokeText + name + "thought that was a bad cat joke!"
+    }
+  } else if (joke == 14) {
+    jokeText = "What did the cat say when it was confused?\nI'm PURR-plexed!\n\n"
+    if (like > 0.5){
+      kitten.affection += 3
+      alertMessage = jokeText +name + "thought that was a good cat joke!"
+    } else {
+      kitten.affection -= 3
+      alertMessage = jokeText + name + "thought that was a bad cat joke!"
+    }
+  } else if (joke == 13) {
+    jokeText = "what is a cats favorite dessert?\nChocolate MOUSE!\n\n"
+    if (like > 0.5){
+      kitten.affection += 3
+      alertMessage = jokeText +name + "thought that was a good cat joke!"
+    } else {
+      kitten.affection -= 3
+      alertMessage = jokeText + name + "thought that was a bad cat joke!"
+    }
+  } else if (joke == 12) {
+    jokeText = "Where dos a cat go when it loses its tail?\nTo a re-TAIL store!\n\n"
+    if (like > 0.5){
+      kitten.affection += 3
+      alertMessage = jokeText +name + "thought that was a good cat joke!"
+    } else {
+      kitten.affection -= 3
+      alertMessage = jokeText + name + "thought that was a bad cat joke!"
+    }
+  } else if (joke == 11) {
+    jokeText = "What do you call a cat that lives in an igloo?\nAn eskiMEW!\n\n"
+    if (like > 0.5){
+      kitten.affection += 3
+      alertMessage = jokeText +name + "thought that was a good cat joke!"
+    } else {
+      kitten.affection -= 3
+      alertMessage = jokeText + name + "thought that was a bad cat joke!"
+    }
+  } else if (joke == 10) {
+    jokeText = "How do cats stop crimes?\nThey call CLAW enforcement!\n\n"
+    if (like > 0.5){
+      kitten.affection += 3
+      alertMessage = jokeText +name + "thought that was a good cat joke!"
+    } else {
+      kitten.affection -= 3
+      alertMessage = jokeText + name + "thought that was a bad cat joke!"
+    }
+  } else if (joke == 9) {
+    jokeText = "Why do cats always get their way?\nThey are very PURR-suasive!\n\n"
+    if (like > 0.5){
+      kitten.affection += 3
+      alertMessage = jokeText +name + "thought that was a good cat joke!"
+    } else {
+      kitten.affection -= 3
+      alertMessage = jokeText + name + "thought that was a bad cat joke!"
+    }
+  } else if (joke == 8) {
+    jokeText = "How do cats end a fight?\nThey HISS and make up!\n\n"
+    if (like > 0.5){
+      kitten.affection += 3
+      alertMessage = jokeText +name + "thought that was a good cat joke!"
+    } else {
+      kitten.affection -= 3
+      alertMessage = jokeText + name + "thought that was a bad cat joke!"
+    }
+  }else if (joke == 6) {
+    jokeText = "What should you use to comb a cat?\nA CATacomb!\n\n"
+    if (like > 0.5){
+      kitten.affection += 3
+      alertMessage = jokeText +name + "thought that was a good cat joke!"
+    } else {
+      kitten.affection -= 3
+      alertMessage = jokeText + name + "thought that was a bad cat joke!"
+    }
+  } else if (joke == 6) {
+    jokeText = "What is a cats favorite movie?\nThe Sound of MEWsic!\n\n"
+    if (like > 0.5){
+      kitten.affection += 3
+      alertMessage = jokeText +name + "thought that was a good cat joke!"
+    } else {
+      kitten.affection -= 3
+      alertMessage = jokeText + name + "thought that was a bad cat joke!"
+    }
+  }else if (joke == 5) {
+    jokeText = "How do you know when a cat is upset?\nThey have a HISSY fit!\n\n"
+    if (like > 0.5){
+      kitten.affection += 3
+      alertMessage = jokeText +name + "thought that was a good cat joke!"
+    } else {
+      kitten.affection -= 3
+      alertMessage = jokeText + name + "thought that was a bad cat joke!"
+    }
+  } else if (joke == 4) {
+    jokeText = "What is a cats favorite magazine?\nGood MOUSEkeeping!\n\n"
+    if (like > 0.5){
+      kitten.affection += 3
+      alertMessage = jokeText +name + "thought that was a good cat joke!"
+    } else {
+      kitten.affection -= 3
+      alertMessage = jokeText + name + "thought that was a bad cat joke!"
+    }
+  } else if (joke == 3) {
+    jokeText = "Why did the cat wear a fancy dress?\nShe was FELINE fine!\n\n"
+    if (like > 0.5){
+      kitten.affection += 3
+      alertMessage = jokeText +name + "thought that was a good cat joke!"
+    } else {
+      kitten.affection -= 3
+      alertMessage = jokeText + name + "thought that was a bad cat joke!"
+    }
+  } else if (joke == 2) {
+    jokeText = "What is a cats favorite color?\nPURR-ple!!\n\n"
+    if (like > 0.5){
+      kitten.affection += 3
+      alertMessage = jokeText +name + "thought that was a good cat joke!"
+    } else {
+      kitten.affection -= 3
+      alertMessage = jokeText + name + "thought that was a bad cat joke!"
+    }
+  } else if (joke == 1) {
+    jokeText = "Why was the cat afraid of the tree?\nBecause of its BARK!\n\n"
+    if (like > 0.5){
+      kitten.affection += 3
+      alertMessage = jokeText +name + "thought that was a good cat joke!"
+    } else {
+      kitten.affection -= 3
+      alertMessage = jokeText + name + "thought that was a bad cat joke!"
+    }
+  } else if (joke == 0) {
+    jokeText = "The only good cat is a dead cat!\n\n"
+    kitten.affection = 0
+    alertMessage = jokeText + name + "thought that was a REALLY BAD cat joke!"
+  }
+  alert(alertMessage)
+  setKittenMood(kitten)
+  saveKittens()
+  drawKittens()
+}
+
 /**
  * Sets the kittens mood based on its affection
  * Happy > 6, Tolerant <= 5, Angry <= 3, Gone <= 0
  * @param {Kitten} kitten
  */
 function setKittenMood(kitten) {
-  console.log(kitten.mood)
-  console.log(kitten.affection)
   if (kitten.affection == 0) {
-    console.log("Gone")
     kitten.mood = "Gone";
-
   }
     else if (kitten.affection <= 3) {
-      console.log("Angry")
       kitten.mood = "Angry";
-      
     }
     else if (kitten.affection <= 5) {
-      console.log("Tolerant")
       kitten.mood = "Tolerant";
-      
     }
     else {
-      console.log("Happy")
       kitten.mood = "Happy";
-      
     }
 }
 
@@ -215,6 +362,7 @@ function backToIntro() {
 function resetKittens() {
   kittens = []
   saveKittens()
+  document.getElementById("resetButton").classList.add("hidden")
 }
 
 /**

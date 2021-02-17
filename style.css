@@ -124,6 +124,15 @@ button.btn-special:focus{
 button.btn-special:hover{
   color: var(--primary);
 }
+
+button.joke-button{
+  background-color: #7d16b9;
+}
+
+button.joke-button:hover{
+  background-color: #8334b1;
+}
+
 .container{
   margin: 0 .5em;
 }
