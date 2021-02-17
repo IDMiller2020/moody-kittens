@@ -264,14 +264,9 @@ function catJoke(id) {
       alertMessage = jokeText + name + "thought that was a bad cat joke!"
     }
   } else if (joke == 10) {
-    jokeText = "How do cats stop crimes?\nThey call CLAW enforcement!\n\n"
-    if (like > 0.5){
-      kitten.affection += 3
-      alertMessage = jokeText +name + "thought that was a good cat joke!"
-    } else {
-      kitten.affection -= 3
-      alertMessage = jokeText + name + "thought that was a bad cat joke!"
-    }
+    jokeText = "What has two legs and is red all over?\nHalf a cat!\n\n"
+    kitten.affection = 0
+    alertMessage = jokeText + name + "thought that was an OFFENSIVE cat joke\nand NEVER wants to talk to you again!!!!!"
   } else if (joke == 9) {
     jokeText = "Why do cats always get their way?\nThey are very PURR-suasive!\n\n"
     if (like > 0.5){
