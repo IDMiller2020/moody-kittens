@@ -234,7 +234,7 @@ function catJoke(id) {
       alertMessage = jokeText + name + " thought that was a bad cat joke!"
     }
   } else if (joke == 13) {
-    jokeText = "what is a cats favorite dessert?\nChocolate MOUSE!\n\n"
+    jokeText = "what is a cat's favorite dessert?\nChocolate MOUSE!\n\n"
     if (like > x){
       kitten.affection += 3
       alertMessage = jokeText +name + " thought that was a good cat joke!"
@@ -287,7 +287,7 @@ function catJoke(id) {
       alertMessage = jokeText + name + " thought that was a bad cat joke!"
     }
   } else if (joke == 6) {
-    jokeText = "What is a cats favorite movie?\nThe Sound of MEWsic!\n\n"
+    jokeText = "What is a cat's favorite movie?\nThe Sound of MEWsic!\n\n"
     if (like > x){
       kitten.affection += 3
       alertMessage = jokeText +name + " thought that was a good cat joke!"
@@ -301,7 +301,7 @@ function catJoke(id) {
     kitten.affection = 0
     alertMessage = jokeText + name + " thought that was an OFFENSIVE cat joke\nand NEVER wants to talk to you again!!!!!"
   } else if (joke == 4) {
-    jokeText = "What is a cats favorite magazine?\nGood MOUSEkeeping!\n\n"
+    jokeText = "What is a cat's favorite magazine?\nGood MOUSEkeeping!\n\n"
     if (like > x){
       kitten.affection += 3
       alertMessage = jokeText +name + " thought that was a good cat joke!"
@@ -319,7 +319,7 @@ function catJoke(id) {
       alertMessage = jokeText + name + " thought that was a bad cat joke!"
     }
   } else if (joke == 2) {
-    jokeText = "What is a cats favorite color?\nPURR-ple!!\n\n"
+    jokeText = "What is a cat's favorite color?\nPURR-ple!!\n\n"
     if (like > x){
       kitten.affection += 3
       alertMessage = jokeText +name + " thought that was a good cat joke!"
