@@ -211,7 +211,7 @@ function catJoke(id) {
       alertMessage = jokeText + name + " thought that was a bad cat joke!"
     }
   } else if (joke == 16) {
-    jokeText = "How is cat food sold?\nPURR the can!\n\n"
+    jokeText = "How is cat food sold?\nUsually PURR the can!\n\n"
     if (like > 0.4){
       kitten.affection += 3
       alertMessage = jokeText +name + " thought that was a good cat joke!"
@@ -242,7 +242,7 @@ function catJoke(id) {
       alertMessage = jokeText + name + " thought that was a bad cat joke!"
     }
   } else if (joke == 12) {
-    jokeText = "Where dos a cat go when it loses its tail?\nTo a re-TAIL store!\n\n"
+    jokeText = "Where does a cat go when it loses its tail?\nTo a re-TAIL store!\n\n"
     if (like > 0.4){
       kitten.affection += 3
       alertMessage = jokeText +name + " thought that was a good cat joke!"
