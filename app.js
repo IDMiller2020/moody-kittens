@@ -341,13 +341,14 @@ function catJoke(id) {
     kitten.affection = 0
     alertMessage = jokeText + name + " thought that was an OFFENSIVE cat joke\nand NEVER wants to talk to you again!!!!!"
   }
-  alert(alertMessage)
+  console.log(kitten.affection)
   if (kitten.affection > 10) {
     kitten.affection = 10
   }
   setKittenMood(kitten)
   saveKittens()
   drawKittens()
+  alert(alertMessage)
 }
 
 /**
