@@ -183,7 +183,7 @@ function catJoke(id) {
   if (joke == 20) {
     jokeText = "What dog keeps the best time?\nA watch dog!\nOoops, that was a dog joke...\n\n"
     kitten.affection = 0
-    alertMessage = jokeText + name + " thought that was an OFFENSIVE cat joke\nand NEVER wants to talk to you again!!!!!"
+    alertMessage = jokeText + name + " thought that was an OFFENSIVE cat joke\nand has run away!!!!!"
   } else if (joke == 19) {
     jokeText = "Why was the cat so agitated?\nIt was in a bad MEWD!\n\n"
     if (like > x){
@@ -223,7 +223,7 @@ function catJoke(id) {
   } else if (joke == 15) {
     jokeText = "Curiosity killed the cat.\nBut for a while I was a suspect!\n\n"
     kitten.affection = 0
-    alertMessage = jokeText + name + " thought that was an OFFENSIVE cat joke\nand NEVER wants to talk to you again!!!!!"
+    alertMessage = jokeText + name + " thought that was an OFFENSIVE cat joke\nand has run away!!!!!"
   } else if (joke == 14) {
     jokeText = "What did the cat say when it was confused?\nI'm PURR-plexed!\n\n"
     if (like > x){
@@ -254,7 +254,7 @@ function catJoke(id) {
   } else if (joke == 11) {
     jokeText = "What has two legs and is red all over?\nHalf a cat!\n\n"
     kitten.affection = 0
-    alertMessage = jokeText + name + " thought that was an OFFENSIVE cat joke\nand NEVER wants to talk to you again!!!!!"
+    alertMessage = jokeText + name + " thought that was an OFFENSIVE cat joke\nand has run away!!!!!"
   } else if (joke == 10) {
     jokeText = "What do you call a cat in a station wagon?\nA car-pet!\n\n"
     if (like > x){
@@ -267,7 +267,7 @@ function catJoke(id) {
   } else if (joke == 9) {
     jokeText = "What has four legs and flies?\nA dead cat!\n\n"
     kitten.affection = 0
-    alertMessage = jokeText + name + " thought that was an OFFENSIVE cat joke\nand NEVER wants to talk to you again!!!!!"
+    alertMessage = jokeText + name + " thought that was an OFFENSIVE cat joke\nand has run away!!!!!"
   } else if (joke == 8) {
     jokeText = "How do cats end a fight?\nThey HISS and make up!\n\n"
     if (like > x){
@@ -299,7 +299,7 @@ function catJoke(id) {
     jokeText = "Headline: Dead Cat Discovered on Mars?\nLooks like Curiosity killed the cat!\n\n"
     jokeText = "The only good cat is a dead cat!\n\n"
     kitten.affection = 0
-    alertMessage = jokeText + name + " thought that was an OFFENSIVE cat joke\nand NEVER wants to talk to you again!!!!!"
+    alertMessage = jokeText + name + " thought that was an OFFENSIVE cat joke\nand has run away!!!!!"
   } else if (joke == 4) {
     jokeText = "What is a cat's favorite magazine?\nGood MOUSEkeeping!\n\n"
     if (like > x){
@@ -339,7 +339,7 @@ function catJoke(id) {
   } else if (joke == 0) {
     jokeText = "The only good cat is a dead cat!\n\n"
     kitten.affection = 0
-    alertMessage = jokeText + name + " thought that was an OFFENSIVE cat joke\nand NEVER wants to talk to you again!!!!!"
+    alertMessage = jokeText + name + " thought that was an OFFENSIVE cat joke\nand has run away!!!!!"
   }
   console.log(kitten.affection)
   if (kitten.affection > 10) {
