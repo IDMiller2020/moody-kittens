@@ -38,6 +38,7 @@ function addKitten(event) {
       alert("You can not add another kitten with the same name as an existing kitten.")
   }
   form.reset()
+  document.getElementById("resetButton").classList.remove("hidden");
 }
 
 /**
@@ -179,14 +180,9 @@ function catJoke(id) {
   let jokeText = ""
   console.log(joke)
   if (joke == 20) {
-    jokeText = "What do cats like to eat on a hot day?\nA MICE-cream cone!\n\n"
-    if (like > 0.5){
-      kitten.affection += 3
-      alertMessage = jokeText +name + " thought that was a good cat joke!"
-    } else {
-      kitten.affection -= 3
-      alertMessage = jokeText + name + " thought that was a bad cat joke!"
-    }
+    jokeText = "What dog keeps the best time?\nA watch dog!\nOoops, that was a dog joke...\n\n"
+    kitten.affection = 0
+    alertMessage = jokeText + name + " thought that was an OFFENSIVE cat joke\nand NEVER wants to talk to you again!!!!!"
   } else if (joke == 19) {
     jokeText = "Why was the cat so agitated?\nIt was in a bad MEWD!\n\n"
     if (like > 0.5){
@@ -255,27 +251,17 @@ function catJoke(id) {
       alertMessage = jokeText + name + " thought that was a bad cat joke!"
     }
   } else if (joke == 11) {
-    jokeText = "What do you call a cat that lives in an igloo?\nAn eskiMEW!\n\n"
-    if (like > 0.5){
-      kitten.affection += 3
-      alertMessage = jokeText +name + " thought that was a good cat joke!"
-    } else {
-      kitten.affection -= 3
-      alertMessage = jokeText + name + " thought that was a bad cat joke!"
-    }
+    jokeText = "What do you call a cat in a station wagon?\nA car-pet!\n\n"
+    kitten.affection = 0
+    alertMessage = jokeText + name + " thought that was an OFFENSIVE cat joke\nand NEVER wants to talk to you again!!!!!"
   } else if (joke == 10) {
     jokeText = "What has two legs and is red all over?\nHalf a cat!\n\n"
     kitten.affection = 0
     alertMessage = jokeText + name + " thought that was an OFFENSIVE cat joke\nand NEVER wants to talk to you again!!!!!"
   } else if (joke == 9) {
-    jokeText = "Why do cats always get their way?\nThey are very PURR-suasive!\n\n"
-    if (like > 0.5){
-      kitten.affection += 3
-      alertMessage = jokeText +name + " thought that was a good cat joke!"
-    } else {
-      kitten.affection -= 3
-      alertMessage = jokeText + name + " thought that was a bad cat joke!"
-    }
+    jokeText = "What has four legs and flies?\nA dead cat!\n\n"
+    kitten.affection = 0
+    alertMessage = jokeText + name + " thought that was an OFFENSIVE cat joke\nand NEVER wants to talk to you again!!!!!"
   } else if (joke == 8) {
     jokeText = "How do cats end a fight?\nThey HISS and make up!\n\n"
     if (like > 0.5){
@@ -376,7 +362,7 @@ function setKittenMood(kitten) {
 }
 
 function getStarted() {
-  document.getElementById("welcome").remove();
+  document.getElementById("welcome").classList.add("hidden");
   document.getElementById("kittens").classList.remove("hidden");
   document.getElementById("addKitten").classList.remove("hidden");
   document.getElementById("returnButton").classList.remove("hidden");
@@ -387,14 +373,16 @@ function getStarted() {
 }
 
 function backToIntro() {
-  document.getElementById("resetButton").classList.remove("hidden")
-  location.reload()
+  document.getElementById("welcome").classList.remove("hidden");
+  document.getElementById("kittens").classList.add("hidden");
+  document.getElementById("addKitten").classList.add("hidden");
+  document.getElementById("returnButton").classList.add("hidden");
 }
 
 function resetKittens() {
   kittens = []
   saveKittens()
-  document.getElementById("resetButton").classList.add("hidden")
+  document.getElementById("resetButton").classList.add("hidden");
 }
 
 /**
@@ -413,4 +401,10 @@ function generateId() {
     "-" +
     Math.floor(Math.random() * 10000000)
   );
+}
+function checkForKittens() {
+  loadKittens()
+  if (kittens.length == 0) {
+    document.getElementById("resetButton").classList.add("hidden");
+  }
 }

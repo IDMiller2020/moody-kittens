@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body onload="checkForKittens()">
   <header class="bg-dark d-flex p-1 space-between">
     <img src="moody-logo.png" height="60" alt="Moody Kittens">
     <form id="addKitten" class="hidden" onsubmit="addKitten(event)">
@@ -34,7 +34,9 @@
           <br>
           <button onclick="getStarted()">Play Game</button>
           <br>
-          <button id = "resetButton" class="btn-cancel" onclick="resetKittens()">Reset Game</button>
+          <span id="resetButton" class="">
+            <button class="btn-cancel" onclick="resetKittens()">Reset Game</button>
+          </span>
         </div>
       </div>
     </div>
