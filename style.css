@@ -148,7 +148,10 @@ button.joke-button:hover{
     padding-left: 50px;
   }
   #returnButton{
-    display:none
+    max-width: 25%;
+  }
+  footer small{
+    max-width: 50%;
   }
 }
 
