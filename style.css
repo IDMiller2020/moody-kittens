@@ -91,13 +91,13 @@ button:hover{
 }
 
 button.return{
-  background-color: var(--bg-lighten);
-  color: var(--dark);
+  background-color: #4169e1;
+  border-radius: 50%;
   width: 150px;
 }
 
 button.return:hover{
-  background-color: var(--light);
+  background-color: #5682e9;
 }
 
 button.btn-special{
@@ -133,6 +133,10 @@ button.joke-button:hover{
   background-color: #8334b1;
 }
 
+span.d-flex p{
+  margin: 0em;
+}
+
 .container{
   margin: 0 .5em;
 }
@@ -148,11 +152,12 @@ button.joke-button:hover{
     padding-left: 50px;
   }
   #returnButton{
-    max-width: 25%;
+    max-width: 19%;
   }
   footer small{
     max-width: 50%;
     text-align: center;
+    line-height: 20px;
   }
 }
 
@@ -188,7 +193,6 @@ button.joke-button:hover{
   color: var(--danger);
   pointer-events: none;
 }
-
 .kitten.gone.bold{
   font-weight: bold;
 }
