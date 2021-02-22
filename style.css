@@ -152,6 +152,7 @@ button.joke-button:hover{
   }
   footer small{
     max-width: 50%;
+    text-align: center;
   }
 }
 
